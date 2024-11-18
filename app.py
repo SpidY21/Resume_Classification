@@ -22,7 +22,7 @@ def extract_skills(resume_text):
     tokens = [token.text for token in nlp_text if
               not token.is_stop]
 
-    data = pd.read_csv(r"C:\Users\Yash\Desktop\ExcelR Project\P393\Deployment\skills.csv")
+    data = pd.read_csv(r"skills.csv")
     skills = list(data.columns.values)
     skillset = []
 
@@ -88,8 +88,8 @@ skills = []
 
 import pickle as pk
 
-model = pk.load(open(r"C:\Users\Yash\Desktop\ExcelR Project\P393\Jupyter\modelDT.sav", 'rb'))
-Vectorizer = pk.load(open(r"C:\Users\Yash\Desktop\ExcelR Project\P393\Jupyter\vector.pkl", 'rb'))
+model = pk.load(open(r"modelDT.sav", 'rb'))
+Vectorizer = pk.load(open(r"vector.pkl", 'rb'))
 
 upload_file = st.file_uploader('Upload Your Resumes...', type=['docx', 'pdf'], accept_multiple_files=True)
 
